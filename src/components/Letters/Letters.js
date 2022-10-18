@@ -1,10 +1,21 @@
 import "./Letters.css";
 
-const Letters = (letter) => {
+const Letters = ({ alphabet, onClick }) => {
+  const getClickonLetter = (event) => {
+    event.preventDefault();
+    onClick(event.target.textContent);
+  };
+
   return (
-    <li className="letter">
-      <a href="a">{letter}</a>
-    </li>
+    <ul className="letters">
+      {alphabet.split("").map((letter) => {
+        return (
+          <li key={letter} className="letter" onClick={getClickonLetter}>
+            <a href={letter}>{letter.toUpperCase()}</a>
+          </li>
+        );
+      })}
+    </ul>
   );
 };
 
