@@ -13,7 +13,7 @@ function App() {
           <Hangman />
         </div>
         <GuessLetters />
-        <Result message={"youre alive"} />
+        <Result message={""} />
         <Letters />
       </div>
     </>
